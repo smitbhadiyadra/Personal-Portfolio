@@ -1,0 +1,502 @@
+@import url('https://fonts.googleapis.com/css2?family=Allura&family=Bricolage+Grotesque:opsz,wght@10..48,300;10..48,400;10..48,500;10..48,600;10..48,700;10..48,800&family=Courier+Prime&family=Montserrat:wght@300;400;500;600;700;800;900&family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Ubuntu:wght@300;400;500;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--Poppins);
+    color: #ffffffc7;
+}
+
+body,html{
+    width: 100vw;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar{
+    width: 4px;
+    background-color: #000000;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--red);
+    border-radius: 10px;
+}
+
+:root{
+    --theme-color: #333646;
+    --hover: #3A475E;
+    --background: #252734;
+    --red: red;
+    --Allura: 'Allura', cursive;
+    --Bricolage: 'Bricolage Grotesque', sans-serif;
+    --Courier: 'Courier Prime', monospace;
+    --Montserrat: 'Montserrat', sans-serif;
+    --Orbitron: 'Orbitron', sans-serif;
+    --Poppins: 'Poppins', sans-serif;
+    --Ubuntu: 'Ubuntu', sans-serif;
+}
+
+.main{
+    width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.page1{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #000000;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.page1>img{
+    position: absolute;
+    width: 1000px;
+    height: 700px;
+    object-fit: cover;
+    top: 73%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    filter: drop-shadow(1rem 1rem 10rem #2A2C3A);
+    filter: contrast(160%);
+    opacity: 0;
+    transition: 1.5s;
+    /* animation: view 1s ease-in-out; */
+}
+
+.page1 nav{
+    position: relative;
+    width: 100vw;
+    height: 20vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 14vw;
+    z-index: 99;
+}
+
+.menu{
+    animation: slideUp 2s all ease;
+    animation-delay: calc(.2s * var(--i));
+}
+
+.menu a{
+    margin-right: 1.5vw;
+    text-decoration: none;
+    color: var(--hover);
+    font-family: var(--Poppins);
+    font-size: 20px;
+    font-weight: 700;
+    transition: all 0.5s;
+    position: relative;
+}
+
+.menu #active::after{
+    content: '';
+    position: absolute;
+    width: 7.1px;
+    height: 7px;
+    border-radius: 55%;
+    background-color: var(--red);
+    top: 30px;
+    right: 35px;
+}
+
+.menu #active{
+    color: #fff;
+}
+
+.menu a:nth-child(2):hover::after{
+    content: '';
+    position: absolute;
+    width: 7.1px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--red);
+    top: 30px;
+    right: 25px;  
+}
+
+.menu a:nth-child(3):hover::after{
+    content: '';
+    position: absolute;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--red);
+    top: 30px;
+    right: 18px;
+}
+
+
+.menu a:hover{
+    color: #fff;
+    transition: all 0.5s;
+}
+
+.logo{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .5s;
+    cursor: pointer;
+    margin-left: -2%;
+}
+
+.logo:hover{
+    transform: translateY(-5px);
+}
+
+.page1 nav .logo img{
+    position: relative;
+    width: 70px;
+    height: 70px;
+    margin-left: -130px;
+}
+
+.page1 .name{
+    position: absolute;
+    /* background-color: pink; */
+    width: 0%;
+    height: 23vh;
+    align-items: center;
+    text-align: left;
+    line-height: 0.85;
+    left: 68%;
+    top: 47%;
+    /* animation: slideName 1s ease-in-out; */
+    background-color: #000000;
+    overflow: hidden;
+    opacity: 0;
+    transition: 1.5s;
+}
+
+.name h1{
+    padding: 30px 0;
+    font-size: 4.5vw;
+    background-image: url(imgs/name-background.png);
+    background-position: center;
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.red-line{
+    position: absolute;
+    width: 8.5vw;
+    height: 1vh;
+    background-color: var(--red);
+    border-radius: 5px;
+    box-shadow: rgba(255, 0, 0, 0.9) 0px 0px 100px, rgba(255, 0, 0, 0.9) 0px 0px 100px, rgba(255, 0, 0, 0.9) 0px 0px 10px;
+    top: 52%;
+    right: 7.5%;
+    /* animation: slideName 1s ease-in-out; */
+    background-image: url(imgs/name-background.png);
+    background-position: center;
+    background-size: cover;
+    opacity: 0;
+    transition: 1.5s;
+}
+
+.page1 .icons{
+    position: absolute;
+    right: -.5%;
+    display: flex;
+    width: 7%;
+    justify-content: space-between;
+    top: 50.7%;
+    /* animation: slideName 1s ease-in-out; */
+    transition: 1.5s;
+    opacity: 0;
+}
+
+.page1 .icons i{
+    font-size: 25px;
+    transition: all ease .5s;
+    /* text-shadow: rgba(255, 167, 167, 0.9) 0px 0px 10px, rgba(255, 184, 184, 0.9) 0px 0px 10px, rgba(255, 187, 187, 0.9) 0px 0px 100px; */
+    /* background-image: url(imgs/name-background.png);
+    background-position: top;
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text; */
+    color: #fff;
+}
+
+.page1 .icons a i:hover{
+    transform: translateY(-5px);
+    color: #E04B85;
+}
+
+.page1 .icons a:nth-child(2) i:hover{
+    transform: translateY(-5px);
+    color: #0270AD;
+}
+
+.page1 .icons a:nth-child(3) i:hover{
+    transform: translateY(-5px);
+    color: #A01BF6;
+}
+
+.page1 .details{
+    position: absolute;
+    color: #fff;
+    width: 30%;
+    height: 50%;
+    left: 10%;
+    top: 52%;
+    transform: scale(1.2);
+    /* animation: slideRight 1s ease-in-out; */
+    transition: 1.5s;
+    opacity: 0;
+}
+
+.page1 .details h5{
+    font-family: var(--Ubuntu);
+    letter-spacing: 1.5px;
+    margin-bottom: 30px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.page1 .details h2{
+    font-family: var(--Ubuntu);
+    font-weight: 700;
+    font-size: 40px;
+    margin-bottom: 30px;
+    background-image: url(imgs/button-background.png);
+    background-position: center;
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+.page1 .details p{
+    font-size: 12px;
+    font-family: var(--Ubuntu);
+    margin-bottom: 30px;
+    width: 80%;
+    font-weight: 400;
+    line-height:1.6;
+    letter-spacing: .5px;
+}
+
+.page1 .details button{
+    font-size: 15px;
+    font-family: var(--Ubuntu);
+    background-color: var(--red);
+    border: 1px solid #000;
+    padding: 1vh 1.5vw;
+    font-weight: 700;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .5s;
+    background-image: url(imgs/button-background.png);
+    background-size: cover;
+}
+
+button a{
+    text-decoration: none;
+    color: #fff;
+    transition: 1s;
+}
+
+.page1 .details button:hover{
+    color: var(--red);
+    background-image: url(imgs/button-background.png);
+    background-position: center;
+    background-size: cover;
+    border: 1px solid var(--red);
+    background-color: #fff;
+    transform: translateY(-5px);
+    box-shadow: rgba(255, 0, 0, 0.9) 0px 0px 100px, rgba(255, 0, 0, 0.9) 0px 0px 100px, rgba(255, 0, 0, 0.9) 0px 0px 10px;
+}
+
+
+
+.page2{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--background);
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+
+
+@keyframes view{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: .8;
+    }
+}
+
+@keyframes slideRight{
+    0%{
+        opacity: 0;
+        transform: translateX(-100px) scale(1.2);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px) scale(1.2);
+    }
+}
+
+@keyframes slideName{
+    0%{
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+@keyframes slideUp{
+    0%{
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+}
+
+
+@media(max-width: 500px){
+
+    body{
+        overflow-y: hidden;
+    }
+
+
+    .main{
+        background-color: #000000;
+    }
+
+    .page1{
+        height: 100vh;
+        z-index: 99;
+    }
+
+    .page1 nav{
+        position: fixed;
+        height: 7vh;
+        padding: 0 80px;
+        background-color: #000000;
+    }
+
+    nav .logo{
+        margin-left: 30px;
+    }
+
+    nav .menu{
+        margin-right: -60px;
+    }
+
+    nav .menu a{
+        font-size: 16px;
+        margin-left: 5px;
+    }
+
+    .page1>img{
+        position: relative;
+        width: 500px;
+        height: 350px;
+        top: 63%;
+        left: 47%;
+        opacity: 0;
+    }
+
+    .page1 .name{
+        position: absolute;
+        top: 27%;
+        left: 10%;
+        line-height: 1;
+        width: 0%;
+        opacity: 0;
+        height: 15vh;
+        transition: 1.5s;
+    }
+
+    .page1 .name h1{
+        font-size: 50px;
+    }
+
+    .red-line{
+        position: absolute;
+        width: 170px;
+        height: 1vh;
+        background-color: var(--red);
+        border-radius: 5px;
+        box-shadow: rgba(255, 0, 0, 0.9) 0px 0px 100px, rgba(255, 0, 0, 0.9) 0px 0px 100px, rgba(255, 0, 0, 0.9) 0px 0px 10px;
+        top: 28.3%;
+        right: -10%;
+        /* animation: slideName 1s ease-in-out; */
+        background-image: url(imgs/name-background.png);
+        background-position: center;
+        background-size: cover;
+        opacity: 0;
+        transition: 1.5s;
+        z-index: 999;
+    }
+
+    .page1 .icons{
+        position: absolute;
+        right: -40%;
+        display: flex;
+        width: 25%;
+        justify-content: space-between;
+        top: 27.5%;
+        transition: 1.5s;
+        opacity: 0;
+        /* animation: slideName 1s ease-in-out; */
+    }
+
+    .page1 .details{
+        transform: scale(0.9);
+        /* background-color: pink; */
+        position: relative;
+        top: 19%;
+        left: 5%;
+        z-index: 99;
+        width: 110%;
+        /* height: 250%; */
+        margin-top: 100px;
+        opacity: 0;
+    }
+    
+    .details button{
+        width: 25%;
+        position: relative;
+    }
+
+    @keyframes slideRight{
+        0%{
+            opacity: 0;
+            transform: translateX(-100px);
+        }
+        100%{
+            opacity: 1;
+            transform: translateX(0px);
+        }
+    }
+
+    /* .page2{
+        height: 0;
+        background-color: #000000;
+        margin-top: 0vh;
+    } */
+}
